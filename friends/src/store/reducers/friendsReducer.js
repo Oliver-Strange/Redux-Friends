@@ -15,7 +15,7 @@ const initialState = {
     error: null
 };
 
-const reducer = (state = initialState, action) => {
+const friendsReducer = (state = initialState, action) => {
     switch(action.type) {
         case FETCH_DATA_START:
             return {
@@ -27,11 +27,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 fetchingFriends: false,
-                friends: action.payload.data
+                friends: action.payload.friends
             };
         default:
             return state;
     }
 };
 
-export default reducer;
+export default friendsReducer;
