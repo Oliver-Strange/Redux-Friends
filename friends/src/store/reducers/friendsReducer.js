@@ -3,14 +3,10 @@ import {FETCH_DATA_START, FETCH_DATA_SUCCESS} from "../actions";
 const initialState = {
     deletingFriend: false,
     fetchingFriends: false,
-    friends: [{
-        id:'',
-        name:'',
-        age:'',
-        email:''
-    }],
-    loggingIn: false,
-    savingFriends: false,
+    friends: [],
+    name: '',
+    age: '',
+    email: '',
     updatingFriend: false,
     error: null
 };

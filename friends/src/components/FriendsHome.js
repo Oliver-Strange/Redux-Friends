@@ -5,8 +5,8 @@ import { getFriends } from "../store/actions";
 
 
 class FriendsHome extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
     }
 
     componentDidMount() {
@@ -15,9 +15,6 @@ class FriendsHome extends React.Component {
     }
 
     render() {
-        if (this.props.fetchingFriends) {
-            return <h2>Finding Friends</h2>
-        }
        return (
            <div>
                <FriendsList friends={this.props.friends}/>
