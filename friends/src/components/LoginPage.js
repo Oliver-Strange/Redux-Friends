@@ -4,17 +4,21 @@ import { login } from "../store/actions";
 import styled from "styled-components";
 
 class LoginPage extends React.Component {
-  state = {
-    credentials: {
-      username: "",
-      password: ""
-    }
-  };
+  constructor() {
+    super();
+    this.state = {
+      credentials: {
+        username: "",
+        password: ""
+      }
+    };
+  }
 
   handleChange = event => {
+    console.log(event.target);
     this.setState({
       credentials: {
-        ...this.setState.credentials,
+        ...this.state.credentials,
         [event.target.name]: event.target.value
       }
     });
@@ -28,9 +32,12 @@ class LoginPage extends React.Component {
   };
 
   render() {
+    // console.log(this.state.credentials.username);
+    // console.log(this.state.credentials.password);
+    // console.log(this.state.credentials);
     return (
       <LoginPageStyled>
-        <i class="fas fa-users" />
+        <i className="fas fa-users" />
         <h1>Login to see your Friends!</h1>
         <FormStyled onSubmit={this.handleLogin}>
           <input
@@ -41,7 +48,7 @@ class LoginPage extends React.Component {
             onChange={this.handleChange}
           />
           <input
-            type="text"
+            type="password"
             placeholder="password"
             name="password"
             value={this.state.credentials.password}

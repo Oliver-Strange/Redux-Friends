@@ -1,5 +1,5 @@
 import React from "react";
-import FriendsContainer from "./FriendContainer";
+import FriendsContainer from "./FriendsContainer";
 import { connect } from "tls";
 
 const FriendsList = props => {
@@ -7,8 +7,8 @@ const FriendsList = props => {
   return (
     <div>
       {props.friends.map(friend => {
-        return <FriendsContainer key={friend.id} friend={friend} />
-    })}
+        return <FriendsContainer key={friend.id} friend={friend} />;
+      })}
     </div>
   );
 };

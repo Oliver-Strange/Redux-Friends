@@ -9,14 +9,13 @@ import { BrowserRouter as Router, withRouter } from "react-router-dom";
 
 const AppWithRouter = withRouter(App);
 
-const app = ((
+const app = (
   <Provider store={store}>
     <Router>
       <AppWithRouter />
     </Router>
   </Provider>
-),
-document.getElementById("root"));
+)
 
 ReactDOM.render(app, document.getElementById("root"));
 

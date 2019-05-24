@@ -25,6 +25,7 @@ class FriendsHome extends React.Component {
 }
 
 const mapStateToProps = state => {
+    console.log(state);
     return {
         friends: state.friendsReducer.friends,
         error: state.friendsReducer.error,

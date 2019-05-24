@@ -5,8 +5,9 @@ export const FETCH_DATA_START = "FETCH_DATA_START";
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 
 // Login Actions
-const baseURL = "http://localhost:5000/api/friends";
+const baseURL = "http://localhost:5000/api";
 export const login = creds => dispatch => {
+  console.log(creds);
   dispatch({
     type: LOGIN_START
   });
@@ -14,6 +15,7 @@ export const login = creds => dispatch => {
     .post(`${baseURL}/login`, creds)
     .then(res => {
       console.log(res.data);
+      console.log("hello");
       localStorage.setItem("token", res.data.payload);
     })
     .catch(err => {
@@ -27,7 +29,7 @@ export const getFriends = () => dispatch => {
     type: FETCH_DATA_START
   });
   axios
-    .get(`${baseURL}/data`, {
+    .get(`${baseURL}/friends`, {
       headers: {
         Authorization: localStorage.getItem("token")
       }
